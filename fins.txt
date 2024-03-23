@@ -12,7 +12,7 @@ attendre 3mins -> la boite explose
 clique sur la boite -> 
 
 5 SORTIR DE LA MAISON
-prendre la clé, ouvrir la porte -> 
+prendre la clé, ouvrir la porte ->  
 
 6 LA FIN CACA
 (manger un truc pas bon) -> caca infini il se chie dessus
