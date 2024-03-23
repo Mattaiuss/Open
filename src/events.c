@@ -13,6 +13,16 @@ void check_keys(data_t *data)
         sfRenderWindow_close(data->window);
 }
 
+void check_click(data_t *data)
+{
+    if (data->event->mouseButton.button == sfMouseLeft) {
+        if (sfSound_getStatus(data->sound) == sfPlaying)
+            sfSound_stop(data->sound);
+        sfSound_play(data->sound);
+        data->box_clicked++;
+    }
+}
+
 void events(data_t *data)
 {
     while (sfRenderWindow_pollEvent(data->window, data->event)) {
@@ -20,5 +30,7 @@ void events(data_t *data)
             sfRenderWindow_close(data->window);
         if (data->event->type == sfEvtKeyPressed)
             check_keys(data);
+        if (data->event->type == sfEvtMouseButtonPressed)
+            check_click(data);
     }
 }
