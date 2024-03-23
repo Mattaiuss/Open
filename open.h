@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct data_t;
+typedef struct data_s data_t;
 
 typedef struct button_s {
     sfSprite *sprite;
