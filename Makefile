@@ -5,18 +5,18 @@
 ## Makefile that compiles the lib
 ##
 
-NAME	=	open
+NAME		=	open
 
-SRCS	=	window.c	\
-			init_data.c	\
-			events.c	\
-			destroy.c	\
+SRCS		=	window.c	\
+				init_data.c	\
+				events.c	\
+				destroy.c	\
 
-OBJS	=	$(SRCS:.c=.o)
+OBJS		=	$(SRCS:.c=.o)
 
-CFLAGS	=	-Wall -Wextra
-
-CSFML	=	-lcsfml-graphics -lcsfml-window -lcsfml-system
+CFLAGS		=	-Wall -Wextra
+CPPFLAGS	=	-Iinclude
+CSFML		=	-lcsfml-graphics -lcsfml-window -lcsfml-system
 
 all:	$(NAME)
 

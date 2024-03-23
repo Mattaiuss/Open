@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include "graph.h"
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
 #include <SFML/Window.h>
@@ -34,6 +35,7 @@ typedef struct data_s {
 
     int nb_buttons;
     button_t **buttons;
+    graph_t *graph;
 } data_t;
 
 data_t *init_data(void);
