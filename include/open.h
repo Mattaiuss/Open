@@ -1,16 +1,10 @@
-/*
-** EPITECH PROJECT, 2024
-** Open
-** File description:
-** open
-*/
-
 #pragma once
 
 #include "graph.h"
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
 #include <SFML/Window.h>
+#include <SFML/Audio.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -32,6 +26,9 @@ typedef struct data_s {
 
     sfSprite *bg;
     sfTexture *bg_t;
+
+    sfSound *sound;
+    sfSoundBuffer *soundbuffer;
 
     int nb_buttons;
     button_t **buttons;

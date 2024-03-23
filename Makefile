@@ -16,7 +16,7 @@ OBJS		=	$(SRCS:.c=.o)
 
 CFLAGS		=	-Wall -Wextra
 CPPFLAGS	=	-Iinclude
-CSFML		=	-lcsfml-graphics -lcsfml-window -lcsfml-system
+CSFML		=	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
 all:	$(NAME)
 
