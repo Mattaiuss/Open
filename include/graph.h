@@ -15,6 +15,7 @@ struct room_s {
     link_t *links;
 
     bool (*validator)();
+    void (*happen)();
 };
 
 typedef struct rooms_t {
