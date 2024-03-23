@@ -7,10 +7,16 @@
 
 #include "open.h"
 
-static room_t *init_room(char *name, int nb, int visited, bool (*validator)(), bool(*happen)())
+static room_t *init_room(char *name, bool (*validator)(), void (*happen)())
 {
+    static int nb = 0;
     room_t *room = malloc(sizeof(room_t));
 
+    room->name = strdup(name);
+    room->nb = nb++;
+    room->visited = 0;
+    room->validator = validator;
+    room->happen = happen;
     return room;
 }
 
@@ -18,7 +24,7 @@ static rooms_t *init_rooms(void)
 {
     rooms_t *rooms = malloc(sizeof(rooms_t));
 
-    rooms->current = init_room("test1", 0, 0, NULL, NULL);
+    rooms->current = init_room("test1", NULL, NULL);
     return rooms;
 }
 
@@ -28,15 +34,6 @@ static graph_t *init_graph(void)
 
     graph->rooms = init_rooms();
     return graph;
-}
-
-data_t *get_data(data_t *data)
-{
-    static data_t *save;
-
-    if (data != NULL)
-        save = data;
-    return save;
 }
 
 data_t *init_data(void)

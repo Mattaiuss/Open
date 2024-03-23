@@ -7,10 +7,9 @@
 
 NAME		=	open
 
-SRCS		=	window.c	\
-				init_data.c	\
-				events.c	\
-				destroy.c	\
+SRCDIR		=	src/
+
+SRCS		=	$(shell find $(SRCDIR) -type f -name "*.c")
 
 OBJS		=	$(SRCS:.c=.o)
 
