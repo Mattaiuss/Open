@@ -32,5 +32,6 @@ void events(data_t *data)
             check_keys(data);
         if (data->event->type == sfEvtMouseButtonPressed)
             check_click(data);
+        LINK_GAME(data);
     }
 }

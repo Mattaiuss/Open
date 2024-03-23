@@ -14,8 +14,9 @@ int main(int ac, __attribute__((unused)) char **av)
     data_t *data = init_data();
     while (sfRenderWindow_isOpen(data->window)) {
         events(data);
+        check_validation(data);
         sfRenderWindow_clear(data->window, sfBlack);
-        sfRenderWindow_display(data->window);
+        (GAME).graph->current->happen();
     }
     destroy(data);
     return 0;

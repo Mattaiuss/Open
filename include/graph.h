@@ -24,7 +24,7 @@ typedef struct rooms_t {
 } rooms_t;
 
 typedef struct {
-    room_t *first;
+    room_t *current;
     rooms_t *rooms;
     int nb_rooms;
 } graph_t;
