@@ -40,7 +40,7 @@ static graph_t *init_graph(void)
 
 static void set_endings(data_t *data)
 {
-    data->nb_endings = 3;
+    data->nb_endings = 5;
     int fd = open("save.txt", O_RDONLY);
     char *buffer = malloc(sizeof(char) * 100);
     read(fd, buffer, 100);
@@ -55,14 +55,16 @@ static void set_endings(data_t *data)
     close(fd);
     data->menu_endings_sprites = malloc(sizeof(sfSprite *) * data->nb_endings);
     data->menu_endings_textures = malloc(sizeof(sfTexture *) * data->nb_endings);
-    char *textures[] = {"./assets/endings/ending1.png",
-                        "./assets/endings/ending2.png",
-                        "./assets/endings/ending3.png"};
+    char *textures[] = {"./assets/sprite/succes/attente_longue.png",
+                        "./assets/sprite/succes/basic.png",
+                        "./assets/sprite/succes/caca.png",
+                        "./assets/sprite/succes/goblin.png",
+                        "./assets/sprite/succes/goku.png"};
     for (int i = 0; i < data->nb_endings; i++) {
         data->menu_endings_textures[i] = sfTexture_createFromFile(textures[i], NULL);
         data->menu_endings_sprites[i] = sfSprite_create();
         sfSprite_setTexture(data->menu_endings_sprites[i], data->menu_endings_textures[i], sfTrue);
-        sfSprite_setPosition(data->menu_endings_sprites[i], (sfVector2f){1500, i * 200});
+        sfSprite_setPosition(data->menu_endings_sprites[i], (sfVector2f){1500, i * 100});
     }
     free(buffer);
 }
