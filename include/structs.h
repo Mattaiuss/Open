@@ -30,6 +30,11 @@ struct data_s {
     button_t **buttons;
     graph_t *graph;
 
+    int nb_endings;
+    int *optained_endings;
+    sfSprite **menu_endings_sprites;
+    sfTexture **menu_endings_textures;
+
     // Game states
     int box_clicked; // nb de fois que le joueur a cliquer sur la boite
 };
