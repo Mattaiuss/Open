@@ -38,3 +38,6 @@ typedef struct data_s {
 data_t *init_data(void);
 void events(data_t *data);
 void destroy(data_t *data);
+data_t *get_data(data_t *data);
+
+#define GAME        (*get_data(NULL))
