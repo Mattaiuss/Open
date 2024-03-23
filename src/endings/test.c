@@ -22,7 +22,6 @@ void test2_happen(void) {
     data_t *data = &GAME;
     sfRectangleShape* square = sfRectangleShape_create();
 
-    printf("AZE\n");
     sfRectangleShape_setSize(square, (sfVector2f){100, 100});
     sfRectangleShape_setPosition(square, (sfVector2f){200, 50});
     sfRectangleShape_setFillColor(square, sfBlue);
