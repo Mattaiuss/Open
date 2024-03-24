@@ -1,4 +1,5 @@
 
+#include <SFML/Audio.h>
 #include "../include/open.h"
 
 int start_game(data_t *data)
@@ -48,9 +49,10 @@ static void set_buttons(button_t *start, button_t *quit, sfRectangleShape *rect)
     sfRectangleShape_setOutlineColor(rect, sfWhite);
 }
 
-
 void display_menu(data_t *data)
 {
+    sfMusic *music = sfMusic_createFromFile("assets/song/Menu_audio.ogg");
+    sfMusic_play(music);
     sfSprite *bg = sfSprite_create();
     sfTexture *bg_t = sfTexture_createFromFile("assets/sprite/fond.jpg", NULL);
     sfSprite_setTexture(bg, bg_t, sfTrue);
@@ -86,4 +88,6 @@ void display_menu(data_t *data)
         }
         sfRenderWindow_display(data->window);
     }
+    sfMusic_stop(music);
+    sfMusic_destroy(music);
 }
