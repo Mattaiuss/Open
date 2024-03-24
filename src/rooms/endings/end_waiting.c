@@ -1,10 +1,12 @@
 #include "open.h"
 
 bool waiting_validator(void) {
-    // return (GAME.clock.time_elapsed >= 3min)
-    return false;
+    return (sfClock_getElapsedTime(GAME.clock).microseconds >= 3 * 1000000);
 }
 
 void waiting_happen(void) {
     // la boite explose
+    sfRenderWindow_clear(GAME.window, sfBlack);
+    //display the explosion
+    sfRenderWindow_display(GAME.window);
 }
