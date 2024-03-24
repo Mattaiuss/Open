@@ -28,10 +28,6 @@ static rooms_t *init_rooms(void)
 
     basic = add_at_back_rooms(&rooms, "basic", basic_validator, basic_happen);
 
-    // frigo
-    room_b = add_at_back_rooms(&rooms, "frigo", frigo_validator, frigo_happen);
-    init_links(basic, room_b);
-    init_links(room_b, basic);
 
     // goku
     room_a = add_at_back_rooms(&rooms, "goku_global", goku_global_validator, goku_global_happen);
@@ -41,9 +37,13 @@ static rooms_t *init_rooms(void)
     init_links(room_a, room_b);
 
     // caca
+    // frigo
+    room_b = add_at_back_rooms(&rooms, "frigo", frigo_validator, frigo_happen);
+    init_links(basic, room_b);
+    init_links(room_b, basic);
     room_a = add_at_back_rooms(&rooms, "caca_global", caca_global_validator, caca_global_happen);
+    init_links(room_b, room_a);
     room_b = add_at_back_rooms(&rooms, "caca_toilet", caca_toilet_validator, caca_toilet_happen);
-    init_links(basic, room_a);
     init_links(room_a, room_b);
     init_links(room_b, basic);
     room_b = add_at_back_rooms(&rooms, "caca_sur_soi", caca_sur_soi_validator, caca_sur_soi_happen);

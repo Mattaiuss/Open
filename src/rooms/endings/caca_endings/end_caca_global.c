@@ -5,10 +5,11 @@ bool caca_global_validator(void) {
 }
 
 void caca_global_happen(void) {
-    static bool first =true;
+    static bool first = true;
 
     if (first) {
        sfMusic_play(GAME.chiasse_inf);
         first = false;
     }
+    sfRenderWindow_drawSprite(GAME.window, GAME.default_room_sprite, NULL);
 }

@@ -10,8 +10,9 @@ void return_to_basic(void) {
 
 bool basic_validator(void) {
     data_t *data = &GAME;
-    bool result = data->validators->fridge_door;
+    bool result = data->validators->fridge_door && data->validators->fridge_apple;
     if (strcmp(data->graph->current->name, "frigo") == 0 && result) {
+        printf("%d %d", data->validators->fridge_door, data->validators->fridge_apple);
         data->validators->frigo = false;
         data->validators->fridge_door = false;
         data->validators->is_fridge_open = false;

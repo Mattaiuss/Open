@@ -55,6 +55,11 @@ static validators_t *init_validators(void)
     validators->mouse_hole = false;
     validators->key = false;
     validators->is_fridge_open = false;
+    validators->fridge_door = false;
+
+    validators->fridge_apple = false;
+    validators->fridge_cake = false;
+    validators->fridge_milk = false;
     return validators;
 }
 
