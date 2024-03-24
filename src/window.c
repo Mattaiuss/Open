@@ -20,17 +20,19 @@ int main(int ac, __attribute__((unused)) char **av)
     if (ac != 1)
         return (84);
     data_t *data = init_data();
-    if (data->status == MENU)
-        display_menu(data);
-    reset_data(data);
     while (sfRenderWindow_isOpen(data->window)) {
+        if (data->status == MENU) {
+            display_menu(data);
+        }
         events(data);
         check_validation(data);
-        sfRenderWindow_clear(data->window, sfBlack);
-        (GAME).graph->current->happen();
+        if (data->status == PLAY) {
+            sfMusic_stop(data->menu->music);
+            (GAME).graph->current->happen();
+        }
         sfRenderWindow_display(GAME.window);
-        // if (data->status == END)
-        //     break;
+        if (data->status == END)
+            break;
     }
     destroy(data);
     return 0;

@@ -20,4 +20,6 @@ void destroy(data_t *data)
         sfSprite_destroy(data->menu_endings_sprites[i]);
         sfTexture_destroy(data->menu_endings_textures[i]);
     }
+    sfMusic_stop(data->menu->music);
+    sfMusic_destroy(data->menu->music);
 }

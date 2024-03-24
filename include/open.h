@@ -9,6 +9,7 @@
 data_t *init_data(void);
 graph_t *init_graph(void);
 room_t *init_room(char *name, bool (*validator)(), void (*happen)());
+menu_t *init_menu(void);
 void reset_data(data_t *data);
 void events(data_t *data);
 void check_keys(data_t *data);

@@ -58,6 +58,7 @@ data_t *init_data(void)
     data->default_room = data->graph->current;
     data->default_room_texture = sfTexture_createFromFile("./assets/sprite/image_test.png", NULL);
     data->default_room_sprite = sfSprite_create();
+    data->menu = init_menu();
     sfSprite_setTexture(data->default_room_sprite, data->default_room_texture, false);
     LINK_GAME(data);
     return data;

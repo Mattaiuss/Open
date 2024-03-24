@@ -21,6 +21,17 @@ typedef struct {
     sfTexture *newTexture;
 } Sprites;
 
+typedef struct {
+    sfSprite *bg;
+    sfTexture *bg_t;
+    button_t *start;
+    button_t *quit;
+    sfRectangleShape *rect;
+    sfMusic *music;
+    sfSprite *logo_sprite;
+    sfTexture *logo_texture;
+} menu_t;
+
 struct data_s {
     sfRenderWindow *window;
     sfEvent *event;
@@ -47,6 +58,8 @@ struct data_s {
     sfSprite **menu_endings_sprites;
     sfTexture **menu_endings_textures;
 
+    // menu
+    menu_t *menu;
     // Game states
     int box_clicked; // nb de fois que le joueur a cliquer sur la boite
 };
