@@ -66,6 +66,28 @@ typedef struct {
     sfSprite *cheese;
     sfSprite *door;
     sfSprite *chala;
+    sfSprite *play;
+    sfSprite *quit;
+
+    sfTexture *goku_text;
+    sfTexture *quitSprite_text;
+    sfTexture *bg_text;
+    sfTexture *logo_sprite_text;
+    sfTexture *default_room_sprite_text;
+    sfTexture **_textmenu_endings_sprites;
+    sfTexture *fridge_sprite_text;
+    sfTexture *box_open_text;
+    sfTexture *box_top_text;
+    sfTexture *milk_text;
+    sfTexture *cake_text;
+    sfTexture *apple_text;
+    sfTexture *tv_text;
+    sfTexture *key_text;
+    sfTexture *cheese_text;
+    sfTexture *door_text;
+    sfTexture *chala_text;
+    sfTexture *play_text;
+    sfTexture *quit_text;
 } sprites_t;
 
 struct data_s {

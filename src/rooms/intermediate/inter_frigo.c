@@ -13,16 +13,7 @@ bool frigo_validator(void) {
 }
 
 void frigo_happen(void) {
-    static bool first = true;
-    static sfSprite *fridge_sprite;
-    static sfTexture *fridge_texture;
-
-    if (first) {
-        fridge_sprite = sfSprite_create();
-        fridge_texture = sfTexture_createFromFile("assets/sprite/frigo/frigo.png", NULL);
-        sfSprite_setTexture(fridge_sprite, fridge_texture, false);
-    }
     sfRenderWindow_clear(GAME.window, sfBlack);
-    sfRenderWindow_drawSprite(GAME.window, fridge_sprite, NULL);
+    sfRenderWindow_drawSprite(GAME.window, GAME.items->fridge_sprite, NULL);
     // afficher le sprite frigo sur tout l'écran
 }

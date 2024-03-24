@@ -1,13 +1,10 @@
 #include "open.h"
 
-static sfSprite *my_create_sprite(const char *path)
+static void my_create_sprite(const char *path, sfSprite **sprite, sfTexture **text)
 {
-    sfSprite *sprite = sfSprite_create();
-
-    sfTexture *text = sfTexture_createFromFile(path, NULL);
-    sfSprite_setTexture(sprite, text, false);
-    sfTexture_destroy(text);
-    return sprite;
+    *sprite = sfSprite_create();
+    *text = sfTexture_createFromFile(path, NULL);
+    sfSprite_setTexture(*sprite, *text, false);
 }
 
 sprites_t *init_sprites(void)
@@ -22,17 +19,17 @@ sprites_t *init_sprites(void)
     for (int i = 0; i < menu_endings_sprites_size; i++) {
         sprites->menu_endings_sprites[i] = sfSprite_create();
     }
-    sprites->playSprite = my_create_sprite("assets/sprite/play.png");
-    sprites->quitSprite = my_create_sprite("assets/sprite/quite.png");
-    sprites->fridge_sprite = my_create_sprite("assets/sprite/frigo/frigo.png");
-    sprites->box_open = my_create_sprite("assets/sprite/box.png");
-    sprites->box_top = my_create_sprite("assets/sprite/couvercle_box.png");
-    sprites->milk = my_create_sprite("assets/sprite/fridge_milk.png");
-    sprites->cake = my_create_sprite("assets/sprite/fridge_cake.png");
-    sprites->apple = my_create_sprite("assets/sprite/fridge_apple.png");
-    sprites->tv = my_create_sprite("assets/sprite/tv.png");
-    sprites->key = my_create_sprite("assets/sprite/key.png");
-    sprites->cheese = my_create_sprite("assets/sprite/cheese.png");
-    sprites->chala = my_create_sprite("assets/sprite/chala.jpg");
+    my_create_sprite("assets/sprite/play.png", &(sprites->play), &(sprites->play_text));
+    my_create_sprite("assets/sprite/quit.png", &(sprites->quit), &(sprites->quit_text));
+    my_create_sprite("assets/sprite/frigo/frigo.png", &(sprites->fridge_sprite), &(sprites->fridge_sprite_text));
+    my_create_sprite("assets/sprite/box.png", &(sprites->box_open), &(sprites->box_open_text));
+    my_create_sprite("assets/sprite/couvercle_box.png", &(sprites->box_top), &(sprites->box_top_text));
+    my_create_sprite("assets/sprite/fridge_milk.png", &(sprites->milk), &(sprites->milk_text));
+    my_create_sprite("assets/sprite/fridge_cake.png", &(sprites->cake), &(sprites->cake_text));
+    my_create_sprite("assets/sprite/fridge_apple.png", &(sprites->apple), &(sprites->apple_text));
+    my_create_sprite("assets/sprite/tv.png", &(sprites->tv), &(sprites->tv_text));
+    my_create_sprite("assets/sprite/key.png", &(sprites->key), &(sprites->key_text));
+    my_create_sprite("assets/sprite/cheese.png", &(sprites->cheese), &(sprites->cheese_text));
+    my_create_sprite("assets/sprite/chala.jpg", &(sprites->chala), &(sprites->chala_text));
     return sprites;
 }
