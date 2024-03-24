@@ -41,14 +41,21 @@ static void set_endings(data_t *data)
     free(buffer);
 }
 
-static void init_validators(data_t *data)
+static validators_t *init_validators(void)
 {
-    data->validators = malloc(sizeof(validators_t));
-    data->validators->frigo = false;
-    data->validators->phone = false;
-    data->validators->door = false;
-    data->validators->toilets = false;
-    data->validators->cheese = false;
+    validators_t *validators = malloc(sizeof(validators_t));
+
+    validators->frigo = false;
+    validators->phone = false;
+    validators->door = false;
+    validators->toilets = false;
+    validators->cheese = false;
+    validators->tv = false;
+    validators->caca_door = false;
+    validators->box = false;
+    validators->mouse_hole = false;
+    validators->key = false;
+    return;
 }
 
 data_t *init_data(void)
@@ -66,10 +73,10 @@ data_t *init_data(void)
     data->clock = sfClock_create();
     data->graph = init_graph();
     data->default_room = data->graph->current;
-    data->default_room_texture = sfTexture_createFromFile("./assets/sprite/default_room.png", NULL);
+    data->default_room_texture = sfTexture_createFromFile("./assets/sprite/image_test.png", NULL);
     data->default_room_sprite = sfSprite_create();
     data->menu = init_menu();
-    init_validators(data);
+    data->validators = init_validators();
     sfSprite_setTexture(data->default_room_sprite, data->default_room_texture, false);
     LINK_GAME(data);
     return data;
