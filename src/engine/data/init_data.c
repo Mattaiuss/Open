@@ -9,6 +9,22 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+void init_sprites(struct Sprites *sprites)
+{
+    sprites->playSprite = sfSprite_create();
+    sprites->quitSprite = sfSprite_create();
+    sprites->bg = sfSprite_create();
+    sprites->logo_sprite = sfSprite_create();
+    sprites->default_room_sprite = sfSprite_create();
+    sprites->fridge_sprite = sfSprite_create();
+
+    int menu_endings_sprites_size = 5; // replace with actual size
+    sprites->menu_endings_sprites = malloc(sizeof(sfSprite*) * menu_endings_sprites_size);
+    for (int i = 0; i < menu_endings_sprites_size; i++) {
+        sprites->menu_endings_sprites[i] = sfSprite_create();
+    }
+}
+
 static void set_endings(data_t *data)
 {
     data->nb_endings = 5;
