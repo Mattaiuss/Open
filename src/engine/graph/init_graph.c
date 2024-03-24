@@ -58,7 +58,7 @@ static rooms_t *init_rooms(void)
 
 graph_t *init_graph(void)
 {
-    graph_t *graph = malloc(sizeof(graph));
+    graph_t *graph = malloc(sizeof(graph_t));
 
     graph->rooms = init_rooms();
     graph->current = graph->rooms->current;
