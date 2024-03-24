@@ -9,7 +9,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-void init_sprites(struct Sprites *sprites)
+void init_sprites(struct sprites_t *sprites)
 {
     sprites->playSprite = sfSprite_create();
     sprites->quitSprite = sfSprite_create();

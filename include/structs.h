@@ -46,7 +46,7 @@ typedef struct validators_s{
     bool fridge_door;
 } validators_t;
 
-struct Sprites {
+typedef struct {
     sfSprite *playSprite;
     sfSprite *quitSprite;
     sfSprite *bg;
@@ -54,7 +54,7 @@ struct Sprites {
     sfSprite *default_room_sprite;
     sfSprite **menu_endings_sprites;
     sfSprite *fridge_sprite;
-};
+} sprites_t;
 
 struct data_s {
     sfRenderWindow *window;
