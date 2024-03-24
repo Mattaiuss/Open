@@ -4,6 +4,7 @@ int start_game(data_t *data)
 {
     sfRenderWindow_clear(data->window, sfBlack);
     data->status = PLAY;
+    sfClock_restart(data->clock);
     LINK_GAME(data);
     return 0;
 }
