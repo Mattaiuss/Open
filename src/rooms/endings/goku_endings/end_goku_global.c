@@ -3,7 +3,7 @@
 bool goku_global_validator(void)
 {
     // return (télé == clicked)
-    return false;
+    return GAME.validators->tv;
 }
 
 void goku_global_happen(void)
