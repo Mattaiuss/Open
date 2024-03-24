@@ -82,6 +82,7 @@ data_t *init_data(void)
     data->cha_la_music = sfMusic_createFromFile("assets/song/cha-la-head-cha-la.ogg");
     data->tok_tok_goku = sfMusic_createFromFile("assets/song/HEY_ITS_ME_GOKU.ogg");
     data->chiasse_inf = sfMusic_createFromFile("assets/song/chiasse_infini.ogg");
+    sfSprite_setPosition(data->items->screamer_goku, (sfVector2f){1000, 0});
     LINK_GAME(data);
     return data;
 }

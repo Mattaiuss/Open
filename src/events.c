@@ -14,7 +14,10 @@ void check_keys(data_t *data)
         data->status = END;
     }
     if (sfKeyboard_isKeyPressed(sfKeySpace)) {
-        printf("mouse_x: %d  mouse_y: %d\n", MOUSE_X, MOUSE_Y);
+        GAME.validators->door = true;
+        GAME.validators->key = true;
+        GAME.validators->tv = true;
+        LINK_GAME(data);
     }
 }
 
@@ -56,6 +59,8 @@ void check_click(data_t *data)
         data->validators->fridge_door = true;
     if (data->validators->is_fridge_open == true && MOUSE_X >= 535
         && MOUSE_X <= 722 && MOUSE_Y >= 210 && MOUSE_Y <= 568)
+    if (data->validators->is_fridge_open == true && MOUSE_X >= 557
+        && MOUSE_X <= 687 && MOUSE_Y >= 232 && MOUSE_Y <= 448)
         data->validators->fridge_milk = true;
     if (data->validators->is_fridge_open == true && MOUSE_X >= 1117
         && MOUSE_X <= 1502 && MOUSE_Y >= 278 && MOUSE_Y <= 459)

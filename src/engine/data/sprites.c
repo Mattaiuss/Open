@@ -34,5 +34,11 @@ sprites_t *init_sprites(void)
     my_create_sprite("assets/sprite/wait_ending_screen.png", &(sprites->wait_ending_screen), &(sprites->wait_ending_screen_text));
     my_create_sprite("assets/sprite/goku1.png", &(sprites->goku1), &(sprites->goku1_text));
     my_create_sprite("assets/sprite/goku2.png", &(sprites->goku2), &(sprites->goku2_text));
+    my_create_sprite("assets/sprite/door.png", &(sprites->door), &(sprites->door_text));
+    sprites->screamer_goku = sfSprite_create();
+    sprites->rect = (sfIntRect){0, 0, 1004, 790};
+    sfTexture *screamer_goku_text = sfTexture_createFromFile("assets/sprite/screamer_goku.png", NULL);
+    sfSprite_setTexture(sprites->screamer_goku, screamer_goku_text, false);
+    sfSprite_setTextureRect(sprites->screamer_goku, sprites->rect);
     return sprites;
 }
