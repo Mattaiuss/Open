@@ -9,9 +9,13 @@ void return_to_basic(void) {
 }
 
 bool basic_validator(void) {
-    // if (my_strcmp(GAME.graph->current->name, "frigo") == 0
-        // && la porte du frigo == clicked)
-        // return true;
+    data_t *data = &GAME;
+    bool result = data->validators->frigo;
+    if (strcmp(data->graph->current->name, "frigo") == 0 && result) {
+        data->validators->frigo = false;
+        LINK_GAME(data);
+        return true;
+    }
     return false;
 }
 
