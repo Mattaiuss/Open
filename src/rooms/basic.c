@@ -21,5 +21,6 @@ bool basic_validator(void) {
 }
 
 void basic_happen(void) {
+    sfRenderWindow_clear(GAME.window, sfBlack);
     sfRenderWindow_drawSprite(GAME.window, GAME.default_room_sprite, NULL);
 }

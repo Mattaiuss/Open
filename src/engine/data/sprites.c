@@ -32,5 +32,6 @@ sprites_t *init_sprites(void)
     my_create_sprite("assets/sprite/cheese.png", &(sprites->cheese), &(sprites->cheese_text));
     my_create_sprite("assets/sprite/chala.jpg", &(sprites->chala), &(sprites->chala_text));
     my_create_sprite("assets/sprite/wait_ending_screen.png", &(sprites->wait_ending_screen), &(sprites->wait_ending_screen_text));
+    my_create_sprite("assets/sprite/goku.png", &(sprites->goku), &(sprites->goku_text));
     return sprites;
 }
