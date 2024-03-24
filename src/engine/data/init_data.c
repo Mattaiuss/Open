@@ -9,8 +9,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-void init_sprites(struct sprites_t *sprites)
+void init_sprites(void)
 {
+    sprites_t *sprites = malloc(sizeof(sprites_t));
+
     sprites->playSprite = sfSprite_create();
     sprites->quitSprite = sfSprite_create();
     sprites->bg = sfSprite_create();
@@ -23,6 +25,39 @@ void init_sprites(struct sprites_t *sprites)
     for (int i = 0; i < menu_endings_sprites_size; i++) {
         sprites->menu_endings_sprites[i] = sfSprite_create();
     }
+    sprites->box_open = sfSprite_create();
+    sprites->box_top = sfSprite_create();
+    sprites->milk = sfSprite_create();
+    sprites->cake = sfSprite_create();
+    sprites->apple = sfSprite_create();
+    sprites->tv = sfSprite_create();
+    sprites->key = sfSprite_create();
+    sprites->cheese = sfSprite_create();
+    sfTexture *text = sfTexture_createFromFile("assets/sprite/box.png", NULL);
+    sfSprite_setTexture(sprites->box_open, text, false);
+    free(text);
+    text = sfTexture_createFromFile("assets/sprite/couvercle_box.png", NULL);
+    sfSprite_setTexture(sprites->box_top, text, false);
+    free(text);
+    text = sfTexture_createFromFile("assets/sprite/fridge_milk.png", NULL);
+    sfSprite_setTexture(sprites->milk, text, false);
+    free(text);
+    text = sfTexture_createFromFile("assets/sprite/fridge_cake.png", NULL);
+    sfSprite_setTexture(sprites->cake, text, false);
+    free(text);
+    text = sfTexture_createFromFile("assets/sprite/fridge_apple.png", NULL);
+    sfSprite_setTexture(sprites->apple, text, false);
+    free(text);
+    text = sfTexture_createFromFile("assets/sprite/tv.png", NULL);
+    sfSprite_setTexture(sprites->tv, text, false);
+    free(text);
+    text = sfTexture_createFromFile("assets/sprite/key.png", NULL);
+    sfSprite_setTexture(sprites->key, text, false);
+    free(text);
+    text = sfTexture_createFromFile("assets/sprite/cheese.png", NULL);
+    sfSprite_setTexture(sprites->cheese, text, false);
+    free(text);
+    return sprites;
 }
 
 static void set_endings(data_t *data)
@@ -93,6 +128,7 @@ data_t *init_data(void)
     data->default_room_sprite = sfSprite_create();
     data->menu = init_menu();
     data->validators = init_validators();
+    data->items = init_sprites();
     sfSprite_setTexture(data->default_room_sprite, data->default_room_texture, false);
     LINK_GAME(data);
     return data;
