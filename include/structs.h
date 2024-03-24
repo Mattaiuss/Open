@@ -46,7 +46,7 @@ typedef struct validators_s{
     bool fridge_door;
 } validators_t;
 
-struct Sprites {
+typedef struct {
     sfSprite *playSprite;
     sfSprite *goku;
     sfSprite *quitSprite;
@@ -55,7 +55,16 @@ struct Sprites {
     sfSprite *default_room_sprite;
     sfSprite **menu_endings_sprites;
     sfSprite *fridge_sprite;
-};
+    sfSprite *box_open;
+    sfSprite *box_top;
+    sfSprite *milk;
+    sfSprite *cake;
+    sfSprite *apple;
+    sfSprite *tv;
+    sfSprite *key;
+    sfSprite *cheese;
+    sfSprite *door;
+} sprites_t;
 
 struct data_s {
     sfRenderWindow *window;
@@ -77,6 +86,8 @@ struct data_s {
     sfSprite *default_room_sprite;
     sfTexture *default_room_texture;
     graph_t *graph;
+
+    sprites_t *items;
 
     int nb_endings;
     int *optained_endings;
