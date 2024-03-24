@@ -64,6 +64,7 @@ typedef struct {
     sfSprite *key;
     sfSprite *cheese;
     sfSprite *door;
+    sfSprite *chala;
 } sprites_t;
 
 struct data_s {

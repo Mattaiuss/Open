@@ -9,7 +9,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-void init_sprites(void)
+sprites_t *init_sprites(void)
 {
     sprites_t *sprites = malloc(sizeof(sprites_t));
 
@@ -19,7 +19,7 @@ void init_sprites(void)
     sprites->logo_sprite = sfSprite_create();
     sprites->default_room_sprite = sfSprite_create();
     sprites->fridge_sprite = sfSprite_create();
-
+    sprites->chala = sfSprite_create();
 
     int menu_endings_sprites_size = 5; // replace with actual size
     sprites->menu_endings_sprites = malloc(sizeof(sfSprite*) * menu_endings_sprites_size);
@@ -36,28 +36,31 @@ void init_sprites(void)
     sprites->cheese = sfSprite_create();
     sfTexture *text = sfTexture_createFromFile("assets/sprite/box.png", NULL);
     sfSprite_setTexture(sprites->box_open, text, false);
-    free(text);
+    sfTexture_destroy(text);
     text = sfTexture_createFromFile("assets/sprite/couvercle_box.png", NULL);
     sfSprite_setTexture(sprites->box_top, text, false);
-    free(text);
+    sfTexture_destroy(text);
     text = sfTexture_createFromFile("assets/sprite/fridge_milk.png", NULL);
     sfSprite_setTexture(sprites->milk, text, false);
-    free(text);
+    sfTexture_destroy(text);
     text = sfTexture_createFromFile("assets/sprite/fridge_cake.png", NULL);
     sfSprite_setTexture(sprites->cake, text, false);
-    free(text);
+    sfTexture_destroy(text);
     text = sfTexture_createFromFile("assets/sprite/fridge_apple.png", NULL);
     sfSprite_setTexture(sprites->apple, text, false);
-    free(text);
+    sfTexture_destroy(text);
     text = sfTexture_createFromFile("assets/sprite/tv.png", NULL);
     sfSprite_setTexture(sprites->tv, text, false);
-    free(text);
+    sfTexture_destroy(text);
     text = sfTexture_createFromFile("assets/sprite/key.png", NULL);
     sfSprite_setTexture(sprites->key, text, false);
-    free(text);
+    sfTexture_destroy(text);
     text = sfTexture_createFromFile("assets/sprite/cheese.png", NULL);
     sfSprite_setTexture(sprites->cheese, text, false);
-    free(text);
+    sfTexture_destroy(text);
+    text = sfTexture_createFromFile("assets/sprite/chala.jpg", NULL);
+    sfSprite_setTexture(sprites->chala, text, false);
+    sfTexture_destroy(text);
     return sprites;
 }
 
