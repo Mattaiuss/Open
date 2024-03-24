@@ -53,7 +53,8 @@ typedef struct validators_s{
 
 typedef struct {
     sfSprite *playSprite;
-    sfSprite *goku;
+    sfSprite *goku1;
+    sfSprite *goku2;
     sfSprite *quitSprite;
     sfSprite *bg;
     sfSprite *logo_sprite;
@@ -74,7 +75,8 @@ typedef struct {
     sfSprite *quit;
     sfSprite *wait_ending_screen;
 
-    sfTexture *goku_text;
+    sfTexture *goku1_text;
+    sfTexture *goku2_text;
     sfTexture *quitSprite_text;
     sfTexture *bg_text;
     sfTexture *logo_sprite_text;

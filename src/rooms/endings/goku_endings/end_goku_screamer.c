@@ -2,13 +2,16 @@
 
 bool goku_screamer_validator(void)
 {
-    // return (porte == clicked)
     return GAME.validators->door;
 }
 
 void goku_screamer_happen(void)
 {
-    //     rien derriere la porte, pendant 1sec
-    //     puis, goku fonce sur nous en courrant avec le song "goku_drip.ogg"
-    // -> GAME OVER
+    sfSleep(sfSeconds(1));
+    sfClock_restart(GAME.clock);
+    while (sfTime_asSeconds(sfClock_getElapsedTime(GAME.clock)) < 1) {
+        sfRenderWindow_drawSprite(GAME.window, GAME.items->door, NULL);
+        sfRenderWindow_display(GAME.window);
+        sfSprite_setTexture(SPRITE->goku, SPRITE->goku_text, sfTrue);
+    }
 }
