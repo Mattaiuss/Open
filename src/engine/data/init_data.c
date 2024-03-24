@@ -55,7 +55,7 @@ static validators_t *init_validators(void)
     validators->box = false;
     validators->mouse_hole = false;
     validators->key = false;
-    return;
+    return validators;
 }
 
 data_t *init_data(void)

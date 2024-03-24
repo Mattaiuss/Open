@@ -35,6 +35,21 @@ void check_click(data_t *data)
     if (MOUSE_X >= 1576 && MOUSE_X <= 1677
         && MOUSE_Y >= 407 && MOUSE_Y <= 694)
         data->validators->caca_door = true;
+    if (MOUSE_X >= 614 && MOUSE_X <= 641
+        && MOUSE_Y >= 861 && MOUSE_Y <= 898)
+        data->validators->key = true;
+    if (MOUSE_X >= 713 && MOUSE_X <= 741
+        && MOUSE_Y >= 1006 && MOUSE_Y <= 885)
+        data->validators->box = true;
+    if (MOUSE_X >= 1639 && MOUSE_X <= 702
+        && MOUSE_Y >= 1692 && MOUSE_Y <= 751)
+        data->validators->cheese = true;
+    if (MOUSE_X >= 1149 && MOUSE_X <= 252
+        && MOUSE_Y >= 1367 && MOUSE_Y <= 606)
+        data->validators->door = true;
+    if (MOUSE_X >= 1743 && MOUSE_X <= 1769
+        && MOUSE_Y >= 706 && MOUSE_Y <= 729)
+        data->validators->mouse_hole = true;
     LINK_GAME(data);
 }
 

@@ -40,6 +40,9 @@ typedef struct validators_s{
     bool cheese;
     bool tv;
     bool caca_door;
+    bool box;
+    bool mouse_hole;
+    bool key;
 } validators_t;
 
 struct data_s {
