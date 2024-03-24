@@ -91,6 +91,7 @@ data_t *init_data(void)
     sfSound_setBuffer(data->sound, data->soundbuffer);
     data->box_clicked = 0;
     set_endings(data);
+    data->status = 0;
     data->event = malloc(sizeof(sfEvent));
     data->clock = sfClock_create();
     data->graph = init_graph();

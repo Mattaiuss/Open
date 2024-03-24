@@ -9,8 +9,10 @@
 
 void check_keys(data_t *data)
 {
-    if (sfKeyboard_isKeyPressed(sfKeyEscape))
+    if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         sfRenderWindow_close(data->window);
+        data->status = 2;
+    }
 }
 
 void check_click(data_t *data)

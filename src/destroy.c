@@ -20,5 +20,4 @@ void destroy(data_t *data)
         sfSprite_destroy(data->menu_endings_sprites[i]);
         sfTexture_destroy(data->menu_endings_textures[i]);
     }
-    free(data);
 }

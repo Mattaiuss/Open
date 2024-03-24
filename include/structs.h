@@ -8,17 +8,24 @@ typedef struct data_s data_t;
 
 typedef struct button_s {
     sfSprite *sprite;
-    sfTexture *textures;
+    sfTexture *texture;
     sfVector2f pos;
 
     int (*callback)(data_t *data);
     int is_active;
 } button_t;
 
+typedef struct {
+    sfSprite *playSprite;
+    sfSprite *quitSprite;
+    sfTexture *newTexture;
+} Sprites;
+
 struct data_s {
     sfRenderWindow *window;
     sfEvent *event;
     sfClock *clock;
+    int status;
 
     sfSprite *bg;
     sfTexture *bg_t;
