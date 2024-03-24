@@ -3,8 +3,8 @@
 ## Introduction
 "The Box" is a game crafted in CSFML and developed by a collaborative team consisting of galzouz, Sawayuuh, Mattaiuss, Theo, Lucas-Epitech, ReverteOlivier and mrGonzalezGomez.
 This project was crafted for the Second Game Jam in Epitech, inspired by the theme "Open."
-It aims to bring humor and entertainment to its users through engaging gameplay and witty sounds.
-Designed with a focus on user interaction and visual appeal, it offers a unique experience that challenges players to find the endings and laught in every moment.
+It aims to bring humor and entertainment to its users through engaging gameplay and funny sounds.
+Designed with a focus on user interaction and visual appeal, it offers a unique experience that challenges players to find the endings and enjoy every moment.
 
 ## Features
 - Engaging gameplay with a focus on interactions and entertainment.
