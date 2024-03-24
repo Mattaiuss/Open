@@ -28,10 +28,9 @@ void display_menu(data_t *data, bool first)
             check_keys(data);
     }
     is_touched(data, menu->start, menu->quit);
-    sfRenderWindow_drawSprite(data->window, menu->bg, NULL);
     sfRenderWindow_drawSprite(data->window, menu->start->sprite, NULL);
     sfRenderWindow_drawSprite(data->window, menu->quit->sprite, NULL);
-    sfRenderWindow_drawSprite(data->window, menu->logo_sprite, NULL);
+    sfRenderWindow_drawSprite(data->window, menu->bg, NULL);
     for (int i = 0; i < data->nb_endings; i++) {
         if (data->optained_endings[i] == 1)
             sfRenderWindow_drawSprite(data->window, data->menu_endings_sprites[i], NULL);
