@@ -6,7 +6,6 @@ static sfSprite *my_create_sprite(const char *path)
 
     sfTexture *text = sfTexture_createFromFile(path, NULL);
     sfSprite_setTexture(sprite, text, false);
-    sfTexture_destroy(text);
     return sprite;
 }
 
@@ -34,5 +33,6 @@ sprites_t *init_sprites(void)
     sprites->key = my_create_sprite("assets/sprite/key.png");
     sprites->cheese = my_create_sprite("assets/sprite/cheese.png");
     sprites->chala = my_create_sprite("assets/sprite/chala.jpg");
+    sprites->wait_ending_screen = my_create_sprite("assets/sprite/wait_ending_screen.png");
     return sprites;
 }

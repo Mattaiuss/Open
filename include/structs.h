@@ -66,6 +66,7 @@ typedef struct {
     sfSprite *cheese;
     sfSprite *door;
     sfSprite *chala;
+    sfSprite *wait_ending_screen;
 } sprites_t;
 
 struct data_s {
