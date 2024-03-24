@@ -96,6 +96,9 @@ typedef struct {
     sfTexture *play_text;
     sfTexture *quit_text;
     sfTexture *wait_ending_screen_text;
+
+    sfSprite *screamer_goku;
+    sfIntRect rect;
 } sprites_t;
 
 struct data_s {

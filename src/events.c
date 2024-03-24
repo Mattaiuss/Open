@@ -14,7 +14,10 @@ void check_keys(data_t *data)
         data->status = END;
     }
     if (sfKeyboard_isKeyPressed(sfKeySpace)) {
-        printf("mouse_x: %d  mouse_y: %d\n", MOUSE_X, MOUSE_Y);
+        GAME.validators->door = true;
+        GAME.validators->key = true;
+        GAME.validators->tv = true;
+        LINK_GAME(data);
     }
 }
 
