@@ -26,7 +26,7 @@ sprites_t *init_sprites(void)
     my_create_sprite("assets/sprite/couvercle_box.png", &(sprites->box_top), &(sprites->box_top_text));
     my_create_sprite("assets/sprite/fridge_milk.png", &(sprites->milk), &(sprites->milk_text));
     my_create_sprite("assets/sprite/fridge_cake.png", &(sprites->cake), &(sprites->cake_text));
-    my_create_sprite("assets/sprite/fridge_apple.png", &(sprites->apple), &(sprites->apple_text));
+    my_create_sprite("assets/sprite/frigo/apple.png", &(sprites->apple), &(sprites->apple_text));
     my_create_sprite("assets/sprite/tv.png", &(sprites->tv), &(sprites->tv_text));
     my_create_sprite("assets/sprite/key.png", &(sprites->key), &(sprites->key_text));
     my_create_sprite("assets/sprite/cheese.png", &(sprites->cheese), &(sprites->cheese_text));
