@@ -76,7 +76,8 @@ static void set_endings(data_t *data)
         data->menu_endings_textures[i] = sfTexture_createFromFile(textures[i], NULL);
         data->menu_endings_sprites[i] = sfSprite_create();
         sfSprite_setTexture(data->menu_endings_sprites[i], data->menu_endings_textures[i], sfTrue);
-        sfSprite_setPosition(data->menu_endings_sprites[i], (sfVector2f){1500, i * 100});
+        sfSprite_setPosition(data->menu_endings_sprites[i], (sfVector2f){1500, i * 100 + 200});
+        sfSprite_setScale(data->menu_endings_sprites[i], (sfVector2f){200.0f / sfTexture_getSize(data->menu_endings_textures[i]).x, 100.0f / sfTexture_getSize(data->menu_endings_textures[i]).y});
     }
     free(buffer);
 }
