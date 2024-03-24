@@ -7,6 +7,7 @@ bool frigo_validator(void) {
     if (result) {
         data->validators->frigo = false;
         data->validators->fridge_door = false;
+        data->validators->is_fridge_open = true;
         LINK_GAME(data);
     }
     return result;

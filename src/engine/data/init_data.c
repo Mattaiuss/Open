@@ -81,6 +81,7 @@ data_t *init_data(void)
     sfSprite_setTexture(data->default_room_sprite, data->default_room_texture, false);
     data->cha_la_music = sfMusic_createFromFile("assets/song/cha-la-head-cha-la.ogg");
     data->tok_tok_goku = sfMusic_createFromFile("assets/song/HEY_ITS_ME_GOKU.ogg");
+    data->chiasse_inf = sfMusic_createFromFile("assets/song/chiasse_infini.ogg");
     LINK_GAME(data);
     return data;
 }

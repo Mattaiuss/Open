@@ -134,4 +134,5 @@ struct data_s {
     int box_clicked; // nb de fois que le joueur a cliquer sur la boite
     sfMusic *cha_la_music;
     sfMusic *tok_tok_goku;
+    sfMusic *chiasse_inf;
 };

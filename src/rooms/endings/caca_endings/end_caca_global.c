@@ -1,10 +1,14 @@
 #include "open.h"
 
 bool caca_global_validator(void) {
-    // return (plat empoisonée == mangé)
-    return false;
+    return GAME.validators->fridge_apple;
 }
 
 void caca_global_happen(void) {
-    // lancer le son caca
+    static bool first =true;
+
+    if (first) {
+       sfMusic_play(GAME.chiasse_inf);
+        first = false;
+    }
 }

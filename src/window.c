@@ -15,6 +15,14 @@ void display(data_t *data)
     }
 }
 
+void manage_mouse_click(sfMouseButtonEvent event)
+{
+    int x = event.x;
+    int y = event.y;
+
+    printf(" x = %d, y = %d\n", x, y);
+}
+
 int main(int ac, __attribute__((unused)) char **av)
 {
     if (ac != 1)

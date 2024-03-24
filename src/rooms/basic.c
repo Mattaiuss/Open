@@ -14,6 +14,7 @@ bool basic_validator(void) {
     if (strcmp(data->graph->current->name, "frigo") == 0 && result) {
         data->validators->frigo = false;
         data->validators->fridge_door = false;
+        data->validators->is_fridge_open = false;
         LINK_GAME(data);
         return true;
     }
@@ -21,6 +22,11 @@ bool basic_validator(void) {
 }
 
 void basic_happen(void) {
-    sfRenderWindow_clear(GAME.window, sfBlack);
+    static bool first = true;
+
+    if (first) {
+        first = false;
+        sfRenderWindow_clear(GAME.window, sfBlack);
+    }
     sfRenderWindow_drawSprite(GAME.window, GAME.default_room_sprite, NULL);
 }
