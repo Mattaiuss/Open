@@ -48,13 +48,13 @@ static validators_t *init_validators(void)
     validators->frigo = false;
     validators->phone = false;
     validators->door = false;
-    validators->toilets = false;
     validators->cheese = false;
     validators->tv = false;
     validators->caca_door = false;
     validators->box = false;
     validators->mouse_hole = false;
     validators->key = false;
+    validators->is_fridge_open = false;
     return validators;
 }
 

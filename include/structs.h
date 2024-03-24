@@ -36,13 +36,14 @@ typedef struct validators_s{
     bool frigo;
     bool phone;
     bool door;
-    bool toilets;
     bool cheese;
     bool tv;
     bool caca_door;
     bool box;
     bool mouse_hole;
     bool key;
+    bool is_fridge_open;
+    bool fridge_door;
 } validators_t;
 
 struct data_s {

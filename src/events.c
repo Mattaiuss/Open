@@ -27,8 +27,9 @@ void check_click(data_t *data)
         data->box_clicked++;
     }
     if (MOUSE_X >= 1784 && MOUSE_X <= 1919
-        && MOUSE_Y >= 351 && MOUSE_Y <= 778)
+        && MOUSE_Y >= 351 && MOUSE_Y <= 778) {
         data->validators->frigo = true;
+    }
     if (MOUSE_X >= 601 && MOUSE_X <= 806
         && MOUSE_Y >= 436 && MOUSE_Y <= 552)
         data->validators->tv = true;
@@ -50,6 +51,9 @@ void check_click(data_t *data)
     if (MOUSE_X >= 1743 && MOUSE_X <= 1769
         && MOUSE_Y >= 706 && MOUSE_Y <= 729)
         data->validators->mouse_hole = true;
+    if (data->validators->frigo == true && MOUSE_X >= 1594
+        && MOUSE_X <= 1919 && MOUSE_Y >= 111 && MOUSE_Y <= 1075)
+        data->validators->fridge_door = true;
     LINK_GAME(data);
 }
 
