@@ -28,3 +28,6 @@ void display_menu(data_t *data, bool first);
 #define MENU    0
 #define PLAY    1
 #define END     2
+
+#define MOUSE_X sfMouse_getPositionRenderWindow(data->window).x
+#define MOUSE_Y sfMouse_getPositionRenderWindow(data->window).y

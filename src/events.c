@@ -14,7 +14,7 @@ void check_keys(data_t *data)
         data->status = END;
     }
     if (sfKeyboard_isKeyPressed(sfKeySpace)) {
-        printf("mouse_x: %d  mouse_y: %d\n", sfMouse_getPositionRenderWindow(data->window).x, sfMouse_getPositionRenderWindow(data->window).y);
+        printf("mouse_x: %d  mouse_y: %d\n", MOUSE_X, MOUSE_Y);
     }
 }
 
@@ -26,10 +26,16 @@ void check_click(data_t *data)
         sfSound_play(data->sound);
         data->box_clicked++;
     }
-    if (sfMouse_getPositionRenderWindow(data->window).x >= 1784 && sfMouse_getPositionRenderWindow(data->window).x <= 1919
-        && sfMouse_getPositionRenderWindow(data->window).y >= 351 && sfMouse_getPositionRenderWindow(data->window).y <= 778) {
+    if (MOUSE_X >= 1784 && MOUSE_X <= 1919
+        && MOUSE_Y >= 351 && MOUSE_Y <= 778)
         data->validators->frigo = true;
-    }
+    if (MOUSE_X >= 601 && MOUSE_X <= 806
+        && MOUSE_Y >= 436 && MOUSE_Y <= 552)
+        data->validators->tv = true;
+    if (MOUSE_X >= 1576 && MOUSE_X <= 1677
+        && MOUSE_Y >= 407 && MOUSE_Y <= 694)
+        data->validators->caca_door = true;
+    
 }
 
 void events(data_t *data)

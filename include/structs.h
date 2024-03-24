@@ -38,6 +38,8 @@ typedef struct validators_s{
     bool door;
     bool toilets;
     bool cheese;
+    bool tv;
+    bool caca_door;
 } validators_t;
 
 struct data_s {
