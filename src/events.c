@@ -35,7 +35,7 @@ void check_click(data_t *data)
     if (MOUSE_X >= 1576 && MOUSE_X <= 1677
         && MOUSE_Y >= 407 && MOUSE_Y <= 694)
         data->validators->caca_door = true;
-    
+    LINK_GAME(data);
 }
 
 void events(data_t *data)
