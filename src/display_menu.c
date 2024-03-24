@@ -38,14 +38,14 @@ static void set_buttons(button_t *start, button_t *quit, sfRectangleShape *rect)
     quit->sprite = sfSprite_create();
     quit->texture = sfTexture_createFromFile("assets/sprite/quit.png", NULL);
     sfSprite_setTexture(quit->sprite, quit->texture, sfTrue);
-    quit->pos = (sfVector2f){800 + sfTexture_getSize(quit->texture).x / 2, 700};
+    quit->pos = (sfVector2f){800 + sfTexture_getSize(quit->texture).x / 2, 650};
     sfSprite_setPosition(quit->sprite, quit->pos);
     start->callback = &start_game;
     quit->callback = &quit_game;
     sfRectangleShape_setSize(rect, (sfVector2f){200, 100});
     sfRectangleShape_setFillColor(rect, sfTransparent);
     sfRectangleShape_setOutlineThickness(rect, 5);
-    sfRectangleShape_setOutlineColor(rect, sfRed);
+    sfRectangleShape_setOutlineColor(rect, sfWhite);
 }
 
 
@@ -57,6 +57,12 @@ void display_menu(data_t *data)
     button_t *start = malloc(sizeof(button_t));
     button_t *quit = malloc(sizeof(button_t));
     sfRectangleShape *rect = sfRectangleShape_create();
+    sfSprite *newSprite = sfSprite_create();
+    sfTexture *newTexture = sfTexture_createFromFile("assets/sprite/Logo.png", NULL);
+    sfSprite_setTexture(newSprite, newTexture, sfTrue);
+    sfVector2u windowSize = sfRenderWindow_getSize(data->window);
+    sfVector2f spritePos = {windowSize.x / 2.0f - sfTexture_getSize(newTexture).x / 2.0f, 100};
+    sfSprite_setPosition(newSprite, spritePos);
 
     set_buttons(start, quit, rect);
     sfRenderWindow_clear(data->window, sfBlack);
@@ -71,6 +77,7 @@ void display_menu(data_t *data)
         sfRenderWindow_drawSprite(data->window, bg, NULL);
         sfRenderWindow_drawSprite(data->window, start->sprite, NULL);
         sfRenderWindow_drawSprite(data->window, quit->sprite, NULL);
+        sfRenderWindow_drawSprite(data->window, newSprite, NULL);
         for (int i = 0; i < data->nb_endings; i++) {
             if (data->optained_endings[i] == 1)
                 sfRenderWindow_drawSprite(data->window, data->menu_endings_sprites[i], NULL);
