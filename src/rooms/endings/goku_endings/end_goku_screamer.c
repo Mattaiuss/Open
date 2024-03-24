@@ -3,7 +3,7 @@
 bool goku_screamer_validator(void)
 {
     // return (porte == clicked)
-    return false;
+    return GAME.validators->door;
 }
 
 void goku_screamer_happen(void)

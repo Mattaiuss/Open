@@ -48,6 +48,7 @@ typedef struct validators_s{
 
 struct Sprites {
     sfSprite *playSprite;
+    sfSprite *goku;
     sfSprite *quitSprite;
     sfSprite *bg;
     sfSprite *logo_sprite;
@@ -88,4 +89,6 @@ struct data_s {
     menu_t *menu;
     // Game states
     int box_clicked; // nb de fois que le joueur a cliquer sur la boite
+    sfMusic *cha_la_music;
+    sfMusic *tok_tok_goku;
 };

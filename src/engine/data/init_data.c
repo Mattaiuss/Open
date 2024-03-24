@@ -18,6 +18,7 @@ void init_sprites(struct Sprites *sprites)
     sprites->default_room_sprite = sfSprite_create();
     sprites->fridge_sprite = sfSprite_create();
 
+
     int menu_endings_sprites_size = 5; // replace with actual size
     sprites->menu_endings_sprites = malloc(sizeof(sfSprite*) * menu_endings_sprites_size);
     for (int i = 0; i < menu_endings_sprites_size; i++) {
@@ -94,6 +95,8 @@ data_t *init_data(void)
     data->menu = init_menu();
     data->validators = init_validators();
     sfSprite_setTexture(data->default_room_sprite, data->default_room_texture, false);
+    data->cha_la_music = sfMusic_createFromFile("assets/song/cha-la-head-cha-la.ogg");
+    data->tok_tok_goku = sfMusic_createFromFile("assets/song/HEY_ITS_ME_GOKU.ogg");
     LINK_GAME(data);
     return data;
 }
