@@ -2,7 +2,11 @@
 
 int start_game(data_t *data)
 {
+    sfMusic* music;
+    music = sfMusic_createFromFile("assets/song/Game_audio.ogg");
+
     sfRenderWindow_clear(data->window, sfBlack);
+    sfMusic_play(music);
     data->status = PLAY;
     sfClock_restart(data->clock);
     LINK_GAME(data);
