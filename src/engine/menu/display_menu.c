@@ -1,17 +1,20 @@
 
 #include "../include/open.h"
 
-static void is_touched(data_t *data, button_t *start, button_t *quit)
+static void is_touched(data_t *data, button_t *start, button_t *quit, button_t *help)
 {
     sfVector2i mouse = sfMouse_getPositionRenderWindow(data->window);
     sfFloatRect start_rect = sfSprite_getGlobalBounds(start->sprite);
     sfFloatRect quit_rect = sfSprite_getGlobalBounds(quit->sprite);
+    sfFloatRect help_rect = sfSprite_getGlobalBounds(help->sprite);
 
     if (sfMouse_isButtonPressed(sfMouseLeft)) {
         if (sfFloatRect_contains(&start_rect, mouse.x, mouse.y))
             start->callback(data);
         if (sfFloatRect_contains(&quit_rect, mouse.x, mouse.y))
             quit->callback(data);
+        if (sfFloatRect_contains(&help_rect, mouse.x, mouse.y))
+            help->callback(data);
     }
 }
 
@@ -27,7 +30,7 @@ void display_menu(data_t *data, bool first)
         if (data->event->type == sfEvtKeyPressed)
             check_keys(data);
     }
-    is_touched(data, menu->start, menu->quit);
+    is_touched(data, menu->start, menu->quit, menu->help);
     sfRenderWindow_drawSprite(data->window, menu->start->sprite, NULL);
     sfRenderWindow_drawSprite(data->window, menu->quit->sprite, NULL);
     sfRenderWindow_drawSprite(data->window, menu->bg, NULL);

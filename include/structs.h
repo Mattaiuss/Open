@@ -25,6 +25,7 @@ typedef struct {
     sfSprite *bg;
     sfTexture *bg_t;
     button_t *start;
+    button_t *help;
     button_t *quit;
     sfRectangleShape *rect;
     sfMusic *music;

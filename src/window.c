@@ -29,6 +29,8 @@ int main(int ac, __attribute__((unused)) char **av)
             events(data);
             check_validation(data);
             (GAME).graph->current->happen();
+        } else if (data->status == HELP) {
+            display_help(data);
         }
         sfRenderWindow_display(GAME.window);
         if (data->status == END)
