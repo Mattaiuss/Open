@@ -4,6 +4,7 @@ int start_game(data_t *data)
 {
     sfRenderWindow_clear(data->window, sfBlack);
     data->status = PLAY;
+    LINK_GAME(data);
     return 0;
 }
 
@@ -11,6 +12,7 @@ int quit_game(data_t *data)
 {
     sfRenderWindow_close(data->window);
     data->status = END;
+    LINK_GAME(data);
     return 0;
 }
 

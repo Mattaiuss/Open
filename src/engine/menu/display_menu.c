@@ -15,11 +15,12 @@ static void is_touched(data_t *data, button_t *start, button_t *quit)
     }
 }
 
-void display_menu(data_t *data)
+void display_menu(data_t *data, bool first)
 {
     menu_t *menu = data->menu;
 
-    sfMusic_play(menu->music);
+    if (first)
+        sfMusic_play(menu->music);
     while (sfRenderWindow_pollEvent(data->window, data->event)) {
         if (data->event->type == sfEvtClosed)
             sfRenderWindow_close(data->window);

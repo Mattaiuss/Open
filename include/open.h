@@ -22,7 +22,7 @@ room_t *add_at_back_rooms(rooms_t **rooms, char *name, bool (*validator)(), void
 void return_to_basic(void);
 
 //menu
-void display_menu(data_t *data);
+void display_menu(data_t *data, bool first);
 
 // status
 #define MENU    0

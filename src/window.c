@@ -20,14 +20,14 @@ int main(int ac, __attribute__((unused)) char **av)
     if (ac != 1)
         return (84);
     data_t *data = init_data();
+    display_menu(data, true);
     while (sfRenderWindow_isOpen(data->window)) {
         if (data->status == MENU) {
-            display_menu(data);
-        }
-        events(data);
-        check_validation(data);
-        if (data->status == PLAY) {
+            display_menu(data, false);
+        } else if (data->status == PLAY) {
             sfMusic_stop(data->menu->music);
+            events(data);
+            check_validation(data);
             (GAME).graph->current->happen();
         }
         sfRenderWindow_display(GAME.window);
