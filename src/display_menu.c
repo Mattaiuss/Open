@@ -59,8 +59,8 @@ void display_menu(data_t *data)
     sfRectangleShape *rect = sfRectangleShape_create();
 
     set_buttons(start, quit, rect);
+    sfRenderWindow_clear(data->window, sfBlack);
     while (sfRenderWindow_isOpen(data->window) && data->status == 0) {
-        sfRenderWindow_clear(data->window, sfBlack);
         while (sfRenderWindow_pollEvent(data->window, data->event)) {
             if (data->event->type == sfEvtClosed)
                 sfRenderWindow_close(data->window);

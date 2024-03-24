@@ -19,18 +19,18 @@ int main(int ac, __attribute__((unused)) char **av)
 {
     if (ac != 1)
         return (84);
-    while (1) {
-        data_t *data = init_data();
+    data_t *data = init_data();
+    if (data->status == MENU)
         display_menu(data);
-        while (sfRenderWindow_isOpen(data->window)) {
-            events(data);
-            check_validation(data);
-            sfRenderWindow_clear(data->window, sfBlack);
-            (GAME).graph->current->happen();
-        }
-        destroy(data);
-        if (data->status == 2)
+    reset_data(data);
+    while (sfRenderWindow_isOpen(data->window)) {
+        events(data);
+        check_validation(data);
+        sfRenderWindow_clear(data->window, sfBlack);
+        (GAME).graph->current->happen();
+        if (data->status == END)
             break;
     }
+    destroy(data);
     return 0;
 }
