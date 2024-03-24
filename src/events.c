@@ -54,6 +54,15 @@ void check_click(data_t *data)
     if (data->validators->frigo == true && MOUSE_X >= 1594
         && MOUSE_X <= 1919 && MOUSE_Y >= 111 && MOUSE_Y <= 1075)
         data->validators->fridge_door = true;
+    if (data->validators->fridge_door == true && MOUSE_X >= 557
+        && MOUSE_X <= 687 && MOUSE_Y >= 232 && MOUSE_Y <= 448)
+        data->validators->fridge_milk = true;
+    if (data->validators->fridge_door == true && MOUSE_X >= 1117
+        && MOUSE_X <= 1502 && MOUSE_Y >= 278 && MOUSE_Y <= 459)
+        data->validators->fridge_cake = true;
+    if (data->validators->fridge_door == true && MOUSE_X >= 885
+        && MOUSE_X <= 1042 && MOUSE_Y >= 617 && MOUSE_Y <= 755)
+        data->validators->fridge_apple = true;
     LINK_GAME(data);
 }
 

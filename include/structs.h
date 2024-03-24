@@ -45,6 +45,10 @@ typedef struct validators_s{
     bool key;
     bool is_fridge_open;
     bool fridge_door;
+
+    bool fridge_apple;
+    bool fridge_cake;
+    bool fridge_milk;
 } validators_t;
 
 typedef struct {
