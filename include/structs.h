@@ -68,6 +68,7 @@ typedef struct {
     sfSprite *chala;
     sfSprite *play;
     sfSprite *quit;
+    sfSprite *wait_ending_screen;
 
     sfTexture *goku_text;
     sfTexture *quitSprite_text;
@@ -88,6 +89,7 @@ typedef struct {
     sfTexture *chala_text;
     sfTexture *play_text;
     sfTexture *quit_text;
+    sfTexture *wait_ending_screen_text;
 } sprites_t;
 
 struct data_s {
