@@ -32,6 +32,14 @@ typedef struct {
     sfTexture *logo_texture;
 } menu_t;
 
+typedef struct validators_s{
+    bool frigo;
+    bool phone;
+    bool door;
+    bool toilets;
+    bool cheese;
+} validators_t;
+
 struct data_s {
     sfRenderWindow *window;
     sfEvent *event;
@@ -57,6 +65,8 @@ struct data_s {
     int *optained_endings;
     sfSprite **menu_endings_sprites;
     sfTexture **menu_endings_textures;
+
+    validators_t *validators;
 
     // menu
     menu_t *menu;

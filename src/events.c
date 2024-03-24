@@ -13,6 +13,9 @@ void check_keys(data_t *data)
         sfRenderWindow_close(data->window);
         data->status = END;
     }
+    if (sfKeyboard_isKeyPressed(sfKeySpace)) {
+        printf("mouse_x: %d  mouse_y: %d\n", sfMouse_getPositionRenderWindow(data->window).x, sfMouse_getPositionRenderWindow(data->window).y);
+    }
 }
 
 void check_click(data_t *data)
@@ -22,6 +25,10 @@ void check_click(data_t *data)
             sfSound_stop(data->sound);
         sfSound_play(data->sound);
         data->box_clicked++;
+    }
+    if (sfMouse_getPositionRenderWindow(data->window).x >= 1784 && sfMouse_getPositionRenderWindow(data->window).x <= 1919
+        && sfMouse_getPositionRenderWindow(data->window).y >= 351 && sfMouse_getPositionRenderWindow(data->window).y <= 778) {
+        data->validators->frigo = true;
     }
 }
 
