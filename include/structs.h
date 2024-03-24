@@ -35,6 +35,11 @@ struct data_s {
 
     int nb_buttons;
     button_t **buttons;
+
+    // graph
+    room_t *default_room;
+    sfSprite *default_room_sprite;
+    sfTexture *default_room_texture;
     graph_t *graph;
 
     int nb_endings;

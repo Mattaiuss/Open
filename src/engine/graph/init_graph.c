@@ -5,7 +5,7 @@ static void init_links(room_t *room_src, room_t *room_dest)
     add_at_front(&(room_src->links), room_dest);
 }
 
-static room_t *init_room(char *name, bool (*validator)(), void (*happen)())
+room_t *init_room(char *name, bool (*validator)(), void (*happen)())
 {
     static int nb = 0;
     room_t *room = malloc(sizeof(room_t));
@@ -21,13 +21,38 @@ static room_t *init_room(char *name, bool (*validator)(), void (*happen)())
 
 static rooms_t *init_rooms(void)
 {
-    rooms_t *rooms = malloc(sizeof(rooms_t));
+    rooms_t *rooms = NULL;
+    room_t *basic = NULL;
+    room_t *room_a = NULL;
+    room_t *room_b = NULL;
 
-    rooms->current = init_room("test1", test_validator, test_happen);
-    rooms->next = malloc(sizeof(rooms_t));
-    rooms->next->current = init_room("test2", test_validator, test2_happen);
-    rooms->next->next = NULL;
-    init_links(rooms->current, rooms->next->current);
+    basic = add_at_back_rooms(&rooms, "basic", basic_validator, basic_happen);
+
+    // frigo
+    room_b = add_at_back_rooms(&rooms, "frigo", frigo_validator, frigo_happen);
+    init_links(basic, room_b);
+    init_links(room_b, basic);
+
+    // goku
+    room_a = add_at_back_rooms(&rooms, "goku_global", goku_global_validator, goku_global_happen);
+    room_b = add_at_back_rooms(&rooms, "goku_screamer", goku_screamer_validator, goku_screamer_happen);
+    init_links(basic, room_a);
+    init_links(room_a, basic);
+    init_links(room_a, room_b);
+
+    // caca
+    room_a = add_at_back_rooms(&rooms, "caca_global", caca_global_validator, caca_global_happen);
+    room_b = add_at_back_rooms(&rooms, "caca_toilet", caca_toilet_validator, caca_toilet_happen);
+    init_links(basic, room_a);
+    init_links(room_a, room_b);
+    init_links(room_b, basic);
+    room_b = add_at_back_rooms(&rooms, "caca_sur_soi", caca_sur_soi_validator, caca_sur_soi_happen);
+    init_links(room_a, room_b);
+
+    // waiting
+    room_a = add_at_back_rooms(&rooms, "waiting", waiting_validator, waiting_happen);
+    init_links(basic, room_a);
+
     return rooms;
 }
 

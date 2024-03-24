@@ -28,8 +28,9 @@ int main(int ac, __attribute__((unused)) char **av)
         check_validation(data);
         sfRenderWindow_clear(data->window, sfBlack);
         (GAME).graph->current->happen();
-        if (data->status == END)
-            break;
+        sfRenderWindow_display(GAME.window);
+        // if (data->status == END)
+        //     break;
     }
     destroy(data);
     return 0;
