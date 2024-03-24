@@ -6,7 +6,6 @@ bool waiting_validator(void) {
 
 void waiting_happen(void) {
     // la boite explose
-    sfRenderWindow_clear(GAME.window, sfBlack);
     //display the explosion
     sfRenderWindow_display(GAME.window);
 }
